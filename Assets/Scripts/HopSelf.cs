@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HopSelf : ClickableBase
+public class HopSelf : ClickableBase // INHERITANCE
 {
     private Rigidbody thisRigidbody;
     private float upwardPower = 10;
@@ -12,12 +12,12 @@ public class HopSelf : ClickableBase
         thisRigidbody = GetComponent<Rigidbody>();
     }
 
-    protected override void OnMouseDown()
+    protected override void OnMouseDown() // POLYMORPHISM
     {
         AddUpwardForce();
     }
 
-    private void AddUpwardForce()
+    private void AddUpwardForce() // ABSTRACTION
     {
         thisRigidbody.AddForce(Vector3.up * upwardPower, ForceMode.Impulse);
     }

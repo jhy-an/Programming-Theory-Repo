@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DuplicateSelf : ClickableBase
+public class DuplicateSelf : ClickableBase // INHERITANCE
 {
     private void Update()
     {
@@ -14,12 +14,12 @@ public class DuplicateSelf : ClickableBase
         if (transform.position.y < -3) Destroy(gameObject);
     }
 
-    protected override void OnMouseDown()
+    protected override void OnMouseDown() // POLYMORPHISM
     {
         CloneSelf();
     }
 
-    private void CloneSelf()
+    private void CloneSelf() // ABSTRACTION
     {
         Instantiate(gameObject);
     }
